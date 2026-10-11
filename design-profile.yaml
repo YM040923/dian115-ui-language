@@ -1,0 +1,52 @@
+# Design Profile
+name: Dian115 UI Language
+version: 1.0.0
+source:
+  type: black-box-public-demo
+  url: https://madbrolab.github.io/dian115/demo/#/overview
+  observed_on: 2026-10-11
+  boundaries:
+    - no-private-source
+    - no-production-data
+    - no-credentialed-behavior
+    - no-pixel-clone
+platform:
+  primary: responsive-web-control-plane
+  desktop: dense-operations-workspace
+  mobile: stacked-thumb-first-workflow
+visual:
+  theme: light-first
+  environment: cool-near-white
+  accent: restrained-blue
+  status: success-warning-danger
+  density: high-desktop-moderate-mobile
+  variance: 4-6
+  motion: 3-5
+layout:
+  shell: compact-topbar-plus-drawer
+  frame: centered-fluid-content
+  page_header: english-eyebrow-title-purpose-freshness-action
+  modules: feature-islands
+  desktop: responsive-grid-with-asymmetric-supporting-panels
+  mobile: single-column-stack
+interaction:
+  search: global-command-like-entry
+  navigation: drawer-with-grouped-menu
+  feedback: inline-status-plus-progress-plus-toast-when-transient
+  floating_assistant: movable-edge-dock
+  forms: labelled-fields-sectioned-save-actions
+state_contract:
+  - fresh
+  - loading
+  - empty
+  - stale
+  - offline
+  - error
+  - disabled
+  - retry
+  - success
+non_goals:
+  - clone-reference-routes
+  - copy-business-data
+  - copy-brand-assets
+  - use-dashboard-for-every-screen

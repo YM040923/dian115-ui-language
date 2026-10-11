@@ -3,120 +3,165 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Harbor Console · UI Language Demo</title>
+  <title>Dian115 UI Language · Demo</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <div class="app-shell">
-  <header class="topbar">
-    <button class="icon-button" id="menuToggle" aria-label="打开导航">☰</button>
-    <div id="breadcrumb">总览</div>
-    <div class="top-actions">
-      <button class="icon-button" id="searchToggle" aria-label="打开全局搜索">⌕</button>
-      <button class="icon-button" id="themeToggle" aria-label="切换主题">◐</button>
-    </div>
-  </header>
-
   <aside class="drawer" id="drawer" aria-label="主导航">
-    <div class="brand"><b>H</b><strong>Harbor Console</strong></div>
+    <div class="brand" aria-label="Dian UI Language">
+      <span class="brand-mark" aria-hidden="true"></span><strong><span>DIAN</span><em>115</em></strong>
+    </div>
     <nav>
       <p>概览</p>
-      <button class="nav-item active" data-page="overview">总览</button>
-      <button class="nav-item" data-page="discovery">探索发现 <small>3</small></button>
+      <button class="nav-item active" data-page="overview"><span class="nav-label"><svg class="nav-icon"><use href="#i-gauge"/></svg>总览</span></button>
+      <button class="nav-item" data-page="queue"><span class="nav-label"><svg class="nav-icon"><use href="#i-pulse"/></svg>数据运维</span><small>10</small></button>
+      <p>自动化</p>
+      <button class="nav-item" data-page="discovery"><span class="nav-label"><svg class="nav-icon"><use href="#i-search"/></svg>探索发现</span></button>
+      <button class="nav-item" data-page="queue"><span class="nav-label"><svg class="nav-icon"><use href="#i-calendar"/></svg>追剧日历</span></button>
+      <button class="nav-item" data-page="accounts"><span class="nav-label"><svg class="nav-icon"><use href="#i-bell"/></svg>媒体订阅</span></button>
+      <button class="nav-item" data-page="library"><span class="nav-label"><svg class="nav-icon"><use href="#i-grid"/></svg>媒体整理</span></button>
+      <button class="nav-item" data-page="library"><span class="nav-label"><svg class="nav-icon"><use href="#i-file"/></svg>虚拟影库</span></button>
+      <button class="nav-item" data-page="library"><span class="nav-label"><svg class="nav-icon"><use href="#i-music"/></svg>音乐中心</span></button>
       <p>资源接入</p>
-      <button class="nav-item" data-page="library">媒体库</button>
-      <button class="nav-item" data-page="downloads">下载管理</button>
-      <button class="nav-item" data-page="accounts">账号配置</button>
+      <button class="nav-item" data-page="library"><span class="nav-label"><svg class="nav-icon"><use href="#i-stack"/></svg>我的媒体</span></button>
+      <button class="nav-item" data-page="logs"><span class="nav-label"><svg class="nav-icon"><use href="#i-folder"/></svg>文件管理</span></button>
+      <button class="nav-item" data-page="downloads"><span class="nav-label"><svg class="nav-icon"><use href="#i-download"/></svg>下载管理</span></button>
+      <button class="nav-item" data-page="accounts"><span class="nav-label"><svg class="nav-icon"><use href="#i-key"/></svg>账号配置</span></button>
+      <button class="nav-item" data-page="accounts"><span class="nav-label"><svg class="nav-icon"><use href="#i-globe"/></svg>站点配置</span></button>
+      <button class="nav-item" data-page="settings"><span class="nav-label"><svg class="nav-icon"><use href="#i-puzzle"/></svg>插件中心</span></button>
       <p>控制面板</p>
-      <button class="nav-item" data-page="queue">任务队列</button>
-      <button class="nav-item" data-page="logs">运行日志</button>
-      <button class="nav-item" data-page="settings">系统设置</button>
+      <button class="nav-item" data-page="queue"><span class="nav-label"><svg class="nav-icon"><use href="#i-list"/></svg>任务队列</span></button>
+      <button class="nav-item" data-page="queue"><span class="nav-label"><svg class="nav-icon"><use href="#i-refresh"/></svg>容器更新</span></button>
+      <button class="nav-item" data-page="logs"><span class="nav-label"><svg class="nav-icon"><use href="#i-terminal"/></svg>运行日志</span></button>
+      <button class="nav-item" data-page="logs"><span class="nav-label"><svg class="nav-icon"><use href="#i-database"/></svg>全局缓存</span></button>
+      <button class="nav-item" data-page="settings"><span class="nav-label"><svg class="nav-icon"><use href="#i-layout"/></svg>门户总控</span><small>6</small></button>
+      <button class="nav-item" data-page="settings"><span class="nav-label"><svg class="nav-icon"><use href="#i-settings"/></svg>系统设置</span></button>
     </nav>
-    <footer><i></i> 演示工作区 · v0.1</footer>
+    <footer><span>v4.0.95</span><button class="github-button" data-toast="示例项目未连接 GitHub">◉</button></footer>
   </aside>
   <div class="scrim" id="scrim"></div>
+
+  <header class="topbar">
+    <button class="icon-button mobile-only" id="menuToggle" aria-label="打开导航"><svg><use href="#i-menu"/></svg></button>
+    <div id="breadcrumb">总览</div>
+    <div class="top-actions">
+      <button class="search-button" id="searchToggle" aria-label="打开全局搜索"><svg><use href="#i-search"/></svg><span>搜索</span><kbd>Ctrl ⇧ F</kbd></button>
+      <button class="icon-button" id="themeToggle" aria-label="切换主题"><svg><use href="#i-sun"/></svg></button>
+    </div>
+  </header>
 
   <main class="page-frame">
     <section class="page" data-view="overview">
       <header class="page-header">
-        <div><p class="eyebrow">OVERVIEW</p><h1>系统总览</h1>
-          <p class="description">从服务健康、任务进度到最近内容，快速了解工作区正在发生什么。</p>
-          <p class="fresh"><i></i> 最近采样 <span id="sampleTime">刚刚</span></p>
-        </div>
-        <button class="button primary" id="refresh">↻ 刷新</button>
+        <div class="page-title"><p class="eyebrow"><svg><use href="#i-grid"/></svg> OVERVIEW</p><h1>系统总览</h1></div>
+        <div class="page-actions"><p class="fresh"><i></i>最近采样 <span id="sampleTime">18:47:05</span></p><button class="button quiet" id="refresh"><svg><use href="#i-refresh"/></svg>刷新</button></div>
       </header>
 
-      <div class="metrics">
-        <article><b class="metric-icon blue">▱</b><div><span>托管项目</span><strong>28,642</strong><small>已索引资源</small></div></article>
-        <article><b class="metric-icon purple">＋</b><div><span>今日新增</span><strong>+186</strong><small>今天生成的入口</small></div></article>
-        <article><b class="metric-icon amber">≋</b><div><span>24 小时同步</span><strong>312</strong><small>2 个异常待关注</small></div></article>
-        <article><b class="metric-icon green">▶</b><div><span>实时播放</span><strong>2</strong><small>今日 47 次跳转</small></div></article>
+      <div class="metrics" aria-label="核心指标">
+        <article><b class="metric-icon blue"><svg><use href="#i-copy"/></svg></b><div><span>托管文件</span><strong>28,642</strong><small>STRM 28,642</small></div></article>
+        <article><b class="metric-icon purple"><svg><use href="#i-plus"/></svg></b><div><span>今日新增</span><strong>+186</strong><small>今天生成的媒体入口</small></div></article>
+        <article><b class="metric-icon amber"><svg><use href="#i-checklist"/></svg></b><div><span>24 小时同步</span><strong>312</strong><small>2 个异常待关注</small></div></article>
+        <article><b class="metric-icon green"><svg><use href="#i-play"/></svg></b><div><span>实时播放</span><strong>2</strong><small>今日 47 次跳转</small></div></article>
       </div>
 
-      <div class="columns">
-        <section class="surface">
-          <div class="surface-head"><div><p class="eyebrow">ACTIVITY</p><h2>文件趋势</h2></div><small>近 7 天 · 示例数据</small></div>
-          <div class="trend-numbers"><div><span>文件总数</span><strong>28,642</strong></div><div><span>今日新增</span><strong>+186</strong></div></div>
-          <div class="bars" aria-label="近七天新增趋势"><i style="height:43%"><b>148</b></i><i style="height:67%"><b>228</b></i><i style="height:50%"><b>164</b></i><i style="height:92%"><b>312</b></i><i style="height:59%"><b>196</b></i><i style="height:81%"><b>274</b></i><i class="current" style="height:55%"><b>186</b></i></div>
-          <div class="axis"><span>10-05</span><span>10-06</span><span>10-07</span><span>10-08</span><span>10-09</span><span>10-10</span><span>10-11</span></div>
-        </section>
-        <section class="surface">
-          <div class="surface-head"><div><p class="eyebrow">HEALTH</p><h2>系统连接状态</h2></div><em>全部正常</em></div>
-          <div class="status-list">
-            <div><span>媒体服务</span><b><i class="ok"></i> 已连接</b></div>
-            <div><span>账号池</span><b><i class="ok"></i> 演示账号</b></div>
-            <div><span>推送服务</span><b><i class="ok"></i> 运行中</b></div>
-            <div><span>媒体库</span><b><i class="warn"></i> 2 个提醒</b></div>
+      <div class="columns overview-grid">
+        <section class="surface trend-panel">
+          <div class="surface-head"><div><h2><svg><use href="#i-copy"/></svg>文件趋势</h2><div class="trend-subtitle">近 7 天 · 7 节点</div></div><span class="range-chip">近 7 天 · 7 节点</span></div>
+          <div class="trend-numbers"><div><span>文件总数</span><strong>28,642</strong></div><div><span>+ 今日新增</span><strong class="accent-text">+186</strong></div></div>
+          <div class="chart-legend"><i></i>STRM 28,642 · 今日 +186</div>
+          <div class="line-chart" aria-label="最近七天 STRM 新增趋势">
+            <svg viewBox="0 0 620 190" preserveAspectRatio="none" role="img">
+              <g class="chart-grid"><path d="M40 28H600 M40 74H600 M40 120H600 M40 166H600"/><path d="M40 20V166 M133 20V166 M226 20V166 M319 20V166 M412 20V166 M505 20V166 M598 20V166"/></g>
+              <path class="chart-line" d="M40 127 C70 112 100 91 133 91 S195 129 226 123 S287 45 319 45 S382 111 412 104 S477 70 505 70 S570 111 598 103"/>
+              <g class="chart-points"><circle cx="40" cy="127" r="4"/><circle cx="133" cy="91" r="4"/><circle cx="226" cy="123" r="4"/><circle cx="319" cy="45" r="4"/><circle cx="412" cy="104" r="4"/><circle cx="505" cy="70" r="4"/><circle cx="598" cy="103" r="4"/></g>
+              <g class="chart-values"><text x="40" y="113">148</text><text x="133" y="77">228</text><text x="226" y="109">164</text><text x="319" y="31">312</text><text x="412" y="90">196</text><text x="505" y="56">274</text><text x="598" y="89">186</text></g>
+            </svg>
+            <div class="axis"><span>10-05</span><span>10-06</span><span>10-07</span><span>10-08</span><span>10-09</span><span>10-10</span><span>10-11</span></div>
           </div>
-          <button class="button quiet" data-toast="已打开服务详情">查看服务详情 →</button>
+        </section>
+        <section class="surface status-panel">
+          <div class="surface-head"><h2>系统连接状态</h2><span class="status-count">2</span></div>
+          <div class="status-grid">
+            <div class="status-tile"><span>CD2 服务</span><b><i class="ok"></i>已连接</b></div>
+            <div class="status-tile"><span>115 账号</span><b><i class="ok"></i>演示账号</b></div>
+            <div class="status-tile"><span>CD2 推送</span><b><i class="ok"></i>运行中</b></div>
+            <div class="status-tile"><span>Emby</span><b><i class="ok"></i>已连接</b></div>
+          </div>
+          <div class="monitor-row"><span>监控方式</span><select><option>云盘实时监控</option></select></div>
+          <div class="mini-section"><span>当前任务</span><div class="task-stats"><b><strong>3</strong>下载</b><b><strong>1</strong>上传</b><b><strong>0</strong>复制</b></div></div>
+          <div class="service-row"><span>云盘服务</span><b>CloudDrive2 <small>已运行 5 天 15 小时</small></b></div>
+          <button class="detail-link" data-toast="服务详情面板已打开">查看服务详情 <small>CPU、内存、传输和缓存</small> <strong>＋</strong></button>
         </section>
       </div>
 
-      <div class="columns work">
+      <div class="columns work-grid">
         <section class="surface">
-          <div class="surface-head"><div><h2>任务队列 <small class="live">实时</small></h2><small>后台工作保持可见，失败任务保留恢复入口。</small></div><button class="button quiet" data-page-link="queue">查看全部任务 →</button></div>
+          <div class="surface-head"><h2>任务队列 <span class="live-badge">实时</span></h2><button class="button text-button" data-page-link="queue">查看全部任务</button></div>
           <div class="queue-stats"><div><strong>2</strong><span>活跃</span></div><div><strong>184</strong><span>完成</span></div><div><strong>2</strong><span>失败</span></div><div><strong>4</strong><span>执行槽</span></div></div>
           <div class="queue">
-            <div><i class="dot running"></i><div><b>整理「繁花」S01</b><small>剧集自动整理 · 12:22</small><div class="progress"><i style="width:68%"></i></div></div><strong>运行中</strong></div>
-            <div><i class="dot waiting"></i><div><b>归档「沙丘：第二部」</b><small>电影自动整理 · 12:28</small><div class="progress"><i style="width:24%"></i></div></div><strong>排队</strong></div>
-            <div><i class="dot done"></i><div><b>同步媒体库</b><small>主媒体库 · 11:40</small></div><strong>完成</strong></div>
+            <div><i class="dot running"></i><div><b>整理「繁花」S01</b><small>剧集自动整理 · 08/31 12:22</small><div class="progress"><i style="width:68%"></i></div></div><strong>运行中</strong></div>
+            <div><i class="dot waiting"></i><div><b>归档「沙丘：第二部」</b><small>电影自动整理 · 08/31 12:28</small><div class="progress"><i style="width:0%"></i></div></div><strong>排队</strong></div>
+            <div><i class="dot done"></i><div><b>同步 Emby 媒体库</b><small>主 Emby · 08/31 11:40</small></div><strong>完成</strong></div>
           </div>
         </section>
         <section class="surface">
-          <div class="surface-head"><div><p class="eyebrow">LIVE FEED</p><h2>最近动态</h2></div><em>4</em></div>
-          <div class="feed"><div><b>演示工作区已启动</b><small>系统 · 12:30</small></div><div><b>识别成功：「繁花」S01E20</b><small>整理 · 12:29</small></div><div><b>媒体库刷新完成</b><small>同步 · 12:28</small></div><div><b>下载任务等待空闲连接</b><small>下载 · 12:27</small></div></div>
+          <div class="surface-head"><div><p class="eyebrow">LIVE FEED</p><h2>最近动态</h2></div><span class="feed-count">4</span></div>
+          <div class="feed"><div><b>DIAN115 演示服务已启动</b><small>系统 · 12:30</small></div><div><b>识别成功：「繁花」S01E20</b><small>organize · 12:29</small></div><div><b>Emby 媒体库刷新完成</b><small>emby · 12:28</small></div><div><b>下载任务等待空闲连接</b><small>download · 12:27</small></div></div>
         </section>
       </div>
 
-      <section class="surface now-playing"><div class="surface-head"><div><p class="eyebrow">NOW PLAYING</p><h2>正在播放</h2></div><small>2 个会话</small></div><div class="playing"><div class="poster dune">DUNE</div><div><small>MEDIA · 电影 · 2024</small><h3>沙丘：第二部</h3><p>播放用户：<b>demo_user</b> · 科幻 · 冒险</p><div class="progress"><i style="width:63%"></i></div><small>63% · 预计还剩 01:12:40</small></div><aside><span>18.4% CPU</span><span>38.3% 内存</span><span>127 MB 应用</span></aside></div></section>
+      <section class="surface now-playing"><div class="surface-head"><h2>正在播放 <span class="session-count">2 / 2</span></h2></div><div class="playing"><div class="poster red">繁花</div><div><small>EMBY · 剧集 · 2023</small><h3>繁花</h3><p>8.3　播放用户：<b>family</b>　剧情 · 上海</p><div class="progress"><i style="width:28%"></i></div></div><strong class="playing-percent">28%</strong></div></section>
+      <section class="surface resources"><div class="surface-head"><h2>最近入库</h2><button class="button text-button" data-page-link="library">查看全部</button></div><div class="media-grid"><article><div class="poster dune">DUNE</div><b>沙丘：第二部</b><small>2024 · 电影 · 8.7</small></article><article><div class="poster dark">OPPEN</div><b>奥本海默</b><small>2023 · 电影 · 8.6</small></article><article><div class="poster blue">INTER</div><b>星际穿越</b><small>2014 · 电影 · 8.8</small></article><article><div class="poster purple">SPIDER</div><b>蜘蛛侠：纵横宇宙</b><small>2023 · 电影 · 8.6</small></article></div></section>
     </section>
 
-    <section class="page hidden" data-view="discovery">
-      <header class="page-header"><div><p class="eyebrow">DISCOVERY HUB</p><h1>探索发现</h1><p class="description">先选来源，再缩小范围，最后用卡片上的动作完成下一步。</p></div><button class="button primary" data-toast="已保存当前筛选">保存筛选</button></header>
-      <section class="surface"><div class="tabs"><button class="active">探索</button><button>资源站点</button><button>频道</button><button>订阅</button></div><div class="filters"><label>类型<select><option>全部媒体</option><option>电影</option><option>剧集</option></select></label><label>排序<select><option>热度降序</option><option>上映日期</option><option>评分</option></select></label><label>年份<select><option>全部年份</option><option>2026</option><option>2025</option></select></label><button class="button quiet" data-toast="已应用 3 个筛选">更多筛选</button></div></section>
-      <div class="section-title"><h2>适合继续探索</h2><small>8 项示例内容</small></div>
-      <div class="media-grid"><article class="media-card"><div class="poster red">ANORA</div><h3>阿诺拉</h3><p>2024 · 电影 · 7.3</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article><article class="media-card"><div class="poster blue">F1</div><h3>F1：狂飙飞车</h3><p>2025 · 电影 · 8.0</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article><article class="media-card"><div class="poster green">熊家餐馆</div><h3>熊家餐馆</h3><p>2022 · 剧集 · 8.4</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article><article class="media-card"><div class="poster purple">三体</div><h3>三体</h3><p>2024 · 剧集 · 7.5</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article></div>
-    </section>
+    <section class="page hidden" data-view="discovery"><header class="page-header"><div><p class="eyebrow">DISCOVERY HUB</p><h1>探索发现</h1><p class="description">先选来源，再缩小范围，最后用卡片上的动作完成下一步。</p></div><button class="button primary" data-toast="已保存当前筛选">保存筛选</button></header><section class="surface"><div class="tabs"><button class="active">探索</button><button>资源站点</button><button>频道</button><button>订阅</button></div><div class="filters"><label>类型<select><option>全部媒体</option><option>电影</option><option>剧集</option></select></label><label>排序<select><option>热度降序</option><option>上映日期</option><option>评分</option></select></label><label>年份<select><option>全部年份</option><option>2026</option><option>2025</option></select></label><button class="button quiet" data-toast="已应用 3 个筛选">更多筛选</button></div></section><div class="section-title"><h2>适合继续探索</h2><small>8 项示例内容</small></div><div class="media-grid"><article class="media-card"><div class="poster red">ANORA</div><h3>阿诺拉</h3><p>2024 · 电影 · 7.3</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article><article class="media-card"><div class="poster blue">F1</div><h3>F1：狂飙飞车</h3><p>2025 · 电影 · 8.0</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article><article class="media-card"><div class="poster green">熊家餐馆</div><h3>熊家餐馆</h3><p>2022 · 剧集 · 8.4</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article><article class="media-card"><div class="poster purple">三体</div><h3>三体</h3><p>2024 · 剧集 · 7.5</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article></div></section>
 
-    <section class="page hidden" data-view="settings">
-      <header class="page-header"><div><p class="eyebrow">SYSTEM SETTINGS</p><h1>系统设置</h1><p class="description">每个设置区只服务一个决定；先测试，再保存，失败时保留恢复路径。</p></div><div class="button-row"><button class="button quiet" data-toast="配置已导出（示例）">导出配置</button><button class="button primary" data-toast="导入入口已打开">导入配置</button></div></header>
-      <div class="notice">配置文件可能包含密钥。演示不会上传或保存真实凭据。</div>
-      <div class="settings"><aside class="settings-nav"><button class="active">基础设置</button><button>安全与 API</button><button>AI 设置</button><button>高级设置</button></aside><div class="settings-body"><section class="surface form"><div class="surface-head"><div><h2>媒体服务</h2><small>配置后可测试连接，保存不会立即暴露密钥。</small></div><em>已连接</em></div><label>服务地址<input value="https://media.example.test"></label><label>显示名称<input value="演示媒体库"></label><div class="button-row"><button class="button quiet" data-toast="连接测试成功">测试连接</button><button class="button primary" data-toast="媒体服务设置已保存">保存设置</button></div></section><section class="surface form"><div class="surface-head"><div><h2>任务参数</h2><small>控制后台任务的并发与保留策略。</small></div></div><label>并发槽位<input type="range" value="4" min="1" max="8"></label><label class="switch">自动更新 <input type="checkbox" checked><span></span></label><button class="button primary" data-toast="任务参数已保存">保存参数</button></section></div></div>
-    </section>
+    <section class="page hidden" data-view="settings"><header class="page-header"><div><p class="eyebrow">SYSTEM SETTINGS</p><h1>系统设置</h1><p class="description">每个设置区只服务一个决定；先测试，再保存，失败时保留恢复路径。</p></div><div class="button-row"><button class="button quiet" data-toast="配置已导出（示例）">导出配置</button><button class="button primary" data-toast="导入入口已打开">导入配置</button></div></header><div class="notice">配置文件可能包含密钥。演示不会上传或保存真实凭据。</div><div class="settings"><aside class="settings-nav"><button class="active">基础设置</button><button>安全与 API</button><button>AI 设置</button><button>高级设置</button></aside><div class="settings-body"><section class="surface form"><div class="surface-head"><div><h2>媒体服务</h2><small>配置后可测试连接，保存不会立即暴露密钥。</small></div><em>已连接</em></div><label>服务地址<input value="https://media.example.test"></label><label>显示名称<input value="演示媒体库"></label><div class="button-row"><button class="button quiet" data-toast="连接测试成功">测试连接</button><button class="button primary" data-toast="媒体服务设置已保存">保存设置</button></div></section><section class="surface form"><div class="surface-head"><div><h2>任务参数</h2><small>控制后台任务的并发与保留策略。</small></div></div><label>并发槽位<input type="range" value="4" min="1" max="8"></label><label class="switch">自动更新 <input type="checkbox" checked><span></span></label><button class="button primary" data-toast="任务参数已保存">保存参数</button></section></div></div></section>
 
-    <section class="page hidden" data-view="queue"><header class="page-header"><div><p class="eyebrow">TASK QUEUE</p><h1>任务队列</h1><p class="description">按状态观察工作，进入失败项时优先给出原因和恢复动作。</p></div><button class="button primary" data-toast="队列已刷新">↻ 刷新队列</button></header><section class="surface"><div class="tabs"><button class="active">全部 188</button><button>运行中 2</button><button>排队 4</button><button>失败 2</button></div><div class="queue large"><div><i class="dot running"></i><div><b>整理「繁花」S01</b><small>媒体整理 · 运行 2 分钟</small><div class="progress"><i style="width:68%"></i></div></div><strong>运行中</strong><button class="button small" data-toast="已打开任务详情">详情</button></div><div><i class="dot danger"></i><div><b>刷新海报缓存</b><small>媒体库 · 失败原因：服务暂不可用</small></div><strong class="danger-text">失败</strong><button class="button small" data-toast="已重新加入队列">重试</button></div></div></section></section>
+    <section class="page hidden" data-view="queue"><header class="page-header"><div><p class="eyebrow">TASK QUEUE</p><h1>任务队列</h1><p class="description">按状态观察工作，进入失败项时优先给出原因和恢复动作。</p></div><button class="button primary" data-toast="队列已刷新">刷新队列</button></header><section class="surface"><div class="tabs"><button class="active">全部 188</button><button>运行中 2</button><button>排队 4</button><button>失败 2</button></div><div class="queue large"><div><i class="dot running"></i><div><b>整理「繁花」S01</b><small>媒体整理 · 运行 2 分钟</small><div class="progress"><i style="width:68%"></i></div></div><strong>运行中</strong><button class="button small" data-toast="已打开任务详情">详情</button></div><div><i class="dot danger"></i><div><b>刷新海报缓存</b><small>媒体库 · 失败原因：服务暂不可用</small></div><strong class="danger-text">失败</strong><button class="button small" data-toast="已重新加入队列">重试</button></div></div></section></section>
     <section class="page hidden" data-view="library"><header class="page-header"><div><p class="eyebrow">MEDIA LIBRARY</p><h1>媒体库</h1><p class="description">用图像做识别锚点，用少量元数据支持扫描和决策。</p></div></header><div class="media-grid"><article class="media-card"><div class="poster red">DUNE</div><h3>沙丘：第二部</h3><p>2024 · 电影 · 8.7</p></article><article class="media-card"><div class="poster dark">OPPEN</div><h3>奥本海默</h3><p>2023 · 电影 · 8.6</p></article><article class="media-card"><div class="poster green">INTER</div><h3>星际穿越</h3><p>2014 · 电影 · 8.8</p></article></div></section>
     <section class="page hidden" data-view="downloads"><header class="page-header"><div><p class="eyebrow">DOWNLOADS</p><h1>下载管理</h1><p class="description">速度、进度、来源和下一步动作在同一个任务上下文里。</p></div><button class="button primary" data-toast="下载任务已刷新">刷新任务</button></header><section class="surface download"><div><em>下载中</em><h2>沙丘：第二部 · 2160p WEB-DL</h2><small>26.4 GB · ↓ 17.5 MB/s · ↑ 605 KB/s</small></div><strong>64%</strong><div class="progress"><i style="width:64%"></i></div></section></section>
     <section class="page hidden" data-view="accounts"><header class="page-header"><div><p class="eyebrow">ACCOUNTS</p><h1>账号配置</h1><p class="description">账号是外部依赖，状态必须带上来源、健康度和恢复动作。</p></div></header><section class="surface status-list"><div><span>演示账号</span><b><i class="ok"></i> 已连接</b><button class="button small" data-toast="健康检查完成">检查</button></div><div><span>备用账号</span><b><i class="warn"></i> 即将过期</b><button class="button small" data-toast="已打开续期入口">处理</button></div></section></section>
     <section class="page hidden" data-view="logs"><header class="page-header"><div><p class="eyebrow">RUN LOGS</p><h1>运行日志</h1><p class="description">先给出近期证据，完整日志进入独立页面。</p></div></header><section class="surface logs"><div><small>12:30:04</small><b>INFO</b><span>媒体库刷新完成，新增 18 项</span></div><div><small>12:29:51</small><b>WARN</b><span>一个外部连接响应较慢，已保留上次结果</span></div><div><small>12:28:12</small><b>INFO</b><span>下载任务进入等待队列</span></div></section></section>
   </main>
 
-  <button class="assistant" id="assistant">✦<b>3</b></button>
+  <button class="assistant" id="assistant" aria-label="打开点点 AI 助手"><span>✦</span><b>3</b></button>
   <aside class="assistant-panel hidden" id="assistantPanel"><section class="surface"><div class="surface-head"><h2>关注助手</h2><button class="icon-button" id="assistantClose">×</button></div><p>有 3 个事项值得你看一眼。</p><ul><li><i class="warn"></i> 一个账号将在 7 天后过期</li><li><i class="danger-dot"></i> 一个任务需要重试</li><li><i class="ok"></i> 媒体库已完成同步</li></ul></section></aside>
-  <div class="demo-notice">当前为演示模式，仅展示界面及交互；所有数据均为虚构。</div>
+  <div class="demo-notice">当前为演示模式，仅展示界面及功能，数据为虚拟数据</div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <dialog id="searchDialog"><form method="dialog"><div class="surface-head"><h2>全局搜索</h2><button class="icon-button">×</button></div><input autofocus placeholder="搜索媒体、任务、设置…"><p>搜索入口应该把用户带到下一步，而不是成为另一个复杂页面。</p></form></dialog>
+  <dialog id="searchDialog"><form method="dialog"><div class="surface-head"><h2>全局搜索</h2><button class="icon-button">×</button></div><input autofocus placeholder="搜索媒体、任务、设置…"><p>搜索入口用于快速定位下一步动作。</p></form></dialog>
 </div>
+
+<svg class="icon-sprite" aria-hidden="true">
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 15a8 8 0 1 1 16 0"/><path d="m12 15 4-4"/><path d="M6 19h12"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16h12l-1.5-2v-3a4.5 4.5 0 0 0-9 0v3zM10 19h4"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="5" y="5" width="5" height="5" rx="1"/><rect x="14" y="5" width="5" height="5" rx="1"/><rect x="5" y="14" width="5" height="5" rx="1"/><rect x="14" y="14" width="5" height="5" rx="1"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></symbol>
+  <symbol id="i-stack" viewBox="0 0 24 24"><path d="m4 8 8-4 8 4-8 4zM4 12l8 4 8-4M4 16l8 4 8-4"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7h7l2 2h9v10H3z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 8-8M15 8l2 2M17 6l2 2"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"/></symbol>
+  <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M8 4h4a2 2 0 1 1 4 0v2h4v4h-2a2 2 0 1 0 0 4h2v6h-6v-2a2 2 0 1 0-4 0v2H4v-6h2a2 2 0 1 0 0-4H4V6h4z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14-4L4 9M4 5v4h4M4 13a8 8 0 0 0 14 4l2-2M20 19v-4h-4"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m5 7 4 5-4 5M12 17h7"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v7c0 2 14 2 14 0V5M5 12v7c0 2 14 2 14 0v-7"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 10h16M10 10v9"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.4 1a8 8 0 0 0-2-1.2L14.2 3h-4.4l-.4 2.7a8 8 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.5A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.4-1a8 8 0 0 0 2 1.2l.4 2.7h4.4l.4-2.7a8 8 0 0 0 2-1.2l2.4 1 2-3.4-2-1.5c.1-.4.1-.8.1-1.2z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="7" width="11" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-checklist" viewBox="0 0 24 24"><path d="m4 6 2 2 3-4M11 7h9M4 13l2 2 3-4M11 14h9M4 20l2 1 3-4M11 20h9"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="m10 8 5 4-5 4z"/></symbol>
+</svg>
 <script src="./app.js"></script>
 </body>
 </html>
+

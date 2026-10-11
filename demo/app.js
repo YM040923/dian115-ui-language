@@ -17,7 +17,7 @@ function drawerState(open) {
 function showPage(page) {
   document.querySelectorAll('[data-view]').forEach((view) => view.classList.toggle('hidden', view.dataset.view !== page));
   document.querySelectorAll('.nav-item').forEach((item) => item.classList.toggle('active', item.dataset.page === page));
-  document.querySelector('#breadcrumb').textContent = ({overview:'总览',discovery:'探索发现',library:'媒体库',downloads:'下载管理',accounts:'账号配置',queue:'任务队列',logs:'运行日志',settings:'系统设置'})[page];
+  document.querySelector('#breadcrumb').textContent = ({overview:'总览',discovery:'探索发现',library:'媒体库',downloads:'下载管理',accounts:'账号配置',queue:'任务队列',logs:'运行日志',settings:'系统设置'})[page] || '总览';
   drawerState(false);
   scrollTo({top: 0, behavior: 'smooth'});
 }
@@ -29,15 +29,15 @@ document.querySelectorAll('[data-page-link]').forEach((item) => item.onclick = (
 document.querySelectorAll('[data-toast]').forEach((item) => item.onclick = () => toastMessage(item.dataset.toast));
 document.querySelector('#themeToggle').onclick = () => shell.classList.toggle('dark');
 document.querySelector('#searchToggle').onclick = () => document.querySelector('#searchDialog').showModal();
-document.querySelector('#assistant').onclick = () => document.querySelector('#assistantPanel').classList.remove('hidden');
+document.querySelector('#assistant').onclick = () => document.querySelector('#assistantPanel').classList.toggle('hidden');
 document.querySelector('#assistantClose').onclick = () => document.querySelector('#assistantPanel').classList.add('hidden');
 document.querySelector('#refresh').onclick = (event) => {
   const button = event.currentTarget;
   button.disabled = true;
-  button.textContent = '↻ 刷新中…';
+  button.innerHTML = '<svg><use href="#i-refresh"/></svg>刷新中…';
   setTimeout(() => {
     button.disabled = false;
-    button.textContent = '↻ 刷新';
+    button.innerHTML = '<svg><use href="#i-refresh"/></svg>刷新';
     document.querySelector('#sampleTime').textContent = '刚刚更新';
     toastMessage('数据已刷新');
   }, 650);

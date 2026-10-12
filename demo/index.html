@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dian115 UI Language · Demo</title>
+  <title>Harbor Console · UI Language Demo</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <div class="app-shell">
-  <aside class="drawer" id="drawer" aria-label="主导航">
-    <div class="brand" aria-label="Dian UI Language">
-      <span class="brand-mark" aria-hidden="true"></span><strong><span>DIAN</span><em>115</em></strong>
+  <aside class="drawer" id="drawer" aria-label="主导航" data-design-role="intent-navigation">
+    <div class="brand" aria-label="Harbor Console">
+      <span class="brand-mark" aria-hidden="true"></span><strong><span>HARBOR</span><em>UI</em></strong>
     </div>
     <nav>
       <p>概览</p>
@@ -42,7 +42,7 @@
   </aside>
   <div class="scrim" id="scrim"></div>
 
-  <header class="topbar">
+  <header class="topbar" data-design-role="global-shell">
     <button class="icon-button mobile-only" id="menuToggle" aria-label="打开导航"><svg><use href="#i-menu"/></svg></button>
     <div id="breadcrumb">总览</div>
     <div class="top-actions">
@@ -51,23 +51,23 @@
     </div>
   </header>
 
-  <main class="page-frame">
-    <section class="page" data-view="overview">
-      <header class="page-header">
+  <main class="page-frame" data-design-role="workspace-frame">
+    <section class="page" data-view="overview" data-design-role="overview-composition">
+      <header class="page-header" data-design-role="page-header">
         <div class="page-title"><p class="eyebrow"><svg><use href="#i-grid"/></svg> OVERVIEW</p><h1>系统总览</h1></div>
         <div class="page-actions"><p class="fresh"><i></i>最近采样 <span id="sampleTime">18:47:05</span></p><button class="button quiet" id="refresh"><svg><use href="#i-refresh"/></svg>刷新</button></div>
       </header>
 
-      <div class="metrics" aria-label="核心指标">
+      <div class="metrics" aria-label="核心指标" data-design-role="metric-group">
         <article><b class="metric-icon blue"><svg><use href="#i-copy"/></svg></b><div><span>托管文件</span><strong>28,642</strong><small>STRM 28,642</small></div></article>
         <article><b class="metric-icon purple"><svg><use href="#i-plus"/></svg></b><div><span>今日新增</span><strong>+186</strong><small>今天生成的媒体入口</small></div></article>
         <article><b class="metric-icon amber"><svg><use href="#i-checklist"/></svg></b><div><span>24 小时同步</span><strong>312</strong><small>2 个异常待关注</small></div></article>
         <article><b class="metric-icon green"><svg><use href="#i-play"/></svg></b><div><span>实时播放</span><strong>2</strong><small>今日 47 次跳转</small></div></article>
       </div>
 
-      <div class="columns overview-grid">
+      <div class="columns overview-grid" data-design-role="health-evidence-grid">
         <section class="surface trend-panel">
-          <div class="surface-head"><div><h2><svg><use href="#i-copy"/></svg>文件趋势</h2><div class="trend-subtitle">近 7 天 · 7 节点</div></div><span class="range-chip">近 7 天 · 7 节点</span></div>
+          <div class="surface-head"><div><h2><svg><use href="#i-copy"/></svg>文件趋势</h2></div><span class="range-chip">近 7 天 · 7 节点</span></div>
           <div class="trend-numbers"><div><span>文件总数</span><strong>28,642</strong></div><div><span>+ 今日新增</span><strong class="accent-text">+186</strong></div></div>
           <div class="chart-legend"><i></i>STRM 28,642 · 今日 +186</div>
           <div class="line-chart" aria-label="最近七天 STRM 新增趋势">
@@ -81,10 +81,10 @@
           </div>
         </section>
         <section class="surface status-panel">
-          <div class="surface-head"><h2>系统连接状态</h2><span class="status-count">2</span></div>
+          <div class="surface-head"><h2>系统连接状态</h2></div>
           <div class="status-grid">
             <div class="status-tile"><span>CD2 服务</span><b><i class="ok"></i>已连接</b></div>
-            <div class="status-tile"><span>115 账号</span><b><i class="ok"></i>演示账号</b></div>
+            <div class="status-tile"><span>云盘账号</span><b><i class="ok"></i>演示账号</b></div>
             <div class="status-tile"><span>CD2 推送</span><b><i class="ok"></i>运行中</b></div>
             <div class="status-tile"><span>Emby</span><b><i class="ok"></i>已连接</b></div>
           </div>
@@ -95,8 +95,8 @@
         </section>
       </div>
 
-      <div class="columns work-grid">
-        <section class="surface">
+      <div class="columns work-grid" data-design-role="live-work-grid">
+        <section class="surface task-queue-card">
           <div class="surface-head"><h2>任务队列 <span class="live-badge">实时</span></h2><button class="button text-button" data-page-link="queue">查看全部任务</button></div>
           <div class="queue-stats"><div><strong>2</strong><span>活跃</span></div><div><strong>184</strong><span>完成</span></div><div><strong>2</strong><span>失败</span></div><div><strong>4</strong><span>执行槽</span></div></div>
           <div class="queue">
@@ -105,14 +105,21 @@
             <div><i class="dot done"></i><div><b>同步 Emby 媒体库</b><small>主 Emby · 08/31 11:40</small></div><strong>完成</strong></div>
           </div>
         </section>
-        <section class="surface">
+        <section class="surface activity-card">
           <div class="surface-head"><div><p class="eyebrow">LIVE FEED</p><h2>最近动态</h2></div><span class="feed-count">4</span></div>
-          <div class="feed"><div><b>DIAN115 演示服务已启动</b><small>系统 · 12:30</small></div><div><b>识别成功：「繁花」S01E20</b><small>organize · 12:29</small></div><div><b>Emby 媒体库刷新完成</b><small>emby · 12:28</small></div><div><b>下载任务等待空闲连接</b><small>download · 12:27</small></div></div>
+          <div class="feed"><div><b>Harbor 演示服务已启动</b><small>系统 · 12:30</small></div><div><b>识别成功：「繁花」S01E20</b><small>organize · 12:29</small></div><div><b>Emby 媒体库刷新完成</b><small>emby · 12:28</small></div><div><b>下载任务等待空闲连接</b><small>download · 12:27</small></div></div>
         </section>
-      </div>
-
-      <section class="surface now-playing"><div class="surface-head"><h2>正在播放 <span class="session-count">2 / 2</span></h2></div><div class="playing"><div class="poster red">繁花</div><div><small>EMBY · 剧集 · 2023</small><h3>繁花</h3><p>8.3　播放用户：<b>family</b>　剧情 · 上海</p><div class="progress"><i style="width:28%"></i></div></div><strong class="playing-percent">28%</strong></div></section>
-      <section class="surface resources"><div class="surface-head"><h2>最近入库</h2><button class="button text-button" data-page-link="library">查看全部</button></div><div class="media-grid"><article><div class="poster dune">DUNE</div><b>沙丘：第二部</b><small>2024 · 电影 · 8.7</small></article><article><div class="poster dark">OPPEN</div><b>奥本海默</b><small>2023 · 电影 · 8.6</small></article><article><div class="poster blue">INTER</div><b>星际穿越</b><small>2014 · 电影 · 8.8</small></article><article><div class="poster purple">SPIDER</div><b>蜘蛛侠：纵横宇宙</b><small>2023 · 电影 · 8.6</small></article></div></section>
+        <section class="surface now-playing"><div class="surface-head"><h2>正在播放 <span class="session-count">2 / 2</span></h2></div><div class="playing"><div class="poster red">沙丘：第二部</div><div><small>EMBY · 电影 · 2024</small><h3>沙丘：第二部</h3><p>8.7　播放用户：<b>demo_user</b>　科幻 · 冒险</p><div class="progress"><i style="width:63%"></i></div></div><strong class="playing-percent">63%</strong></div></section>
+      </section>
+      <section class="columns service-grid" data-design-role="supporting-evidence-grid">
+        <section class="surface resource-snapshot"><div class="surface-head"><h2>系统资源</h2><span class="range-chip">固定快照 · 7 节点</span></div><div class="resource-stats"><div><strong>18.4%</strong><span>CPU</span></div><div><strong>38.3%</strong><span>内存</span></div><div><strong>127 MB</strong><span>Harbor 内存</span></div></div><div class="resource-chart" aria-label="CPU、系统内存与 Harbor 内存最近七个采样点"><svg viewBox="0 0 620 150" preserveAspectRatio="none" role="img"><path d="M0 112 C60 106 80 74 138 86 S213 115 272 91 S350 60 411 79 S510 102 620 45" class="resource-line resource-line-blue"/><path d="M0 130 C70 123 89 111 146 121 S224 128 283 116 S366 98 430 108 S526 121 620 83" class="resource-line resource-line-green"/><path d="M0 141 C76 137 116 132 174 136 S252 140 312 131 S402 124 464 131 S552 136 620 110" class="resource-line resource-line-purple"/></svg></div><div class="resource-footer"><span>I/O 负载平稳</span><small>17.7 MB/s · CPU 3/8 · 重读 3</small><b>智能文件调度</b></div></section>
+        <section class="surface"><div class="surface-head"><h2>云盘服务统计</h2></div><div class="resource-table"><div><span>空间使用</span><b>18.6 TB</b></div><div><span>账号总数</span><b>3</b></div><div><span>今日 API 调用</span><b>8,421</b></div><div><span>用户数</span><b>门户 1 · 非门户 1</b></div><div><span>号池数</span><b>备用 1 · 门户 2</b></div></div></section>
+      </section>
+      <section class="columns lower-grid" data-design-role="output-grid">
+        <section class="surface redirect-panel"><div class="surface-head"><h2>302 跳转</h2></div><div class="redirect-stats"><span>正在播放 <b>2</b></span><span>今日播放 <b>47</b></span><span>播放历史 <b>18,642</b></span></div><p class="subhead">播放排行</p><div class="ranking"><div><i>1</i><span class="poster dark">DUNE</span><b>沙丘：第二部</b><strong>228 次</strong><small>2026-08-31</small></div><div><i>2</i><span class="poster red">OPPEN</span><b>奥本海默</b><strong>214 次</strong><small>2026-08-30</small></div><div><i>3</i><span class="poster blue">INTER</span><b>星际穿越</b><strong>206 次</strong><small>2026-08-30</small></div></div></section>
+        <section class="surface download-panel"><div class="surface-head"><h2>下载管理</h2><button class="button text-button" data-toast="下载任务已刷新">刷新下载任务</button></div><div class="download-summary"><b>1</b><span>活跃下载</span><small>↓ 17.5 MB/s　↑ 605.5 KB/s</small></div><h3>沙丘：第二部.2024.2160p.WEB-DL</h3><p>下载中</p><div class="progress"><i style="width:64%"></i></div><div class="download-meta"><span>26.4 GB</span><strong>64%</strong></div><button class="button quiet" data-toast="下载管理页面已打开">管理下载任务与下载器</button></section>
+      </section>
+      <section class="surface resources" data-design-role="media-output-grid"><div class="surface-head"><h2>最近入库</h2><button class="button text-button" data-page-link="library">查看全部</button></div><div class="media-grid"><article><div class="poster dune">DUNE</div><b>沙丘：第二部</b><small>2024 · 电影 · 8.7</small></article><article><div class="poster dark">OPPEN</div><b>奥本海默</b><small>2023 · 电影 · 8.6</small></article><article><div class="poster blue">INTER</div><b>星际穿越</b><small>2014 · 电影 · 8.8</small></article><article><div class="poster purple">SPIDER</div><b>蜘蛛侠：纵横宇宙</b><small>2023 · 电影 · 8.6</small></article></div></section>
     </section>
 
     <section class="page hidden" data-view="discovery"><header class="page-header"><div><p class="eyebrow">DISCOVERY HUB</p><h1>探索发现</h1><p class="description">先选来源，再缩小范围，最后用卡片上的动作完成下一步。</p></div><button class="button primary" data-toast="已保存当前筛选">保存筛选</button></header><section class="surface"><div class="tabs"><button class="active">探索</button><button>资源站点</button><button>频道</button><button>订阅</button></div><div class="filters"><label>类型<select><option>全部媒体</option><option>电影</option><option>剧集</option></select></label><label>排序<select><option>热度降序</option><option>上映日期</option><option>评分</option></select></label><label>年份<select><option>全部年份</option><option>2026</option><option>2025</option></select></label><button class="button quiet" data-toast="已应用 3 个筛选">更多筛选</button></div></section><div class="section-title"><h2>适合继续探索</h2><small>8 项示例内容</small></div><div class="media-grid"><article class="media-card"><div class="poster red">ANORA</div><h3>阿诺拉</h3><p>2024 · 电影 · 7.3</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article><article class="media-card"><div class="poster blue">F1</div><h3>F1：狂飙飞车</h3><p>2025 · 电影 · 8.0</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article><article class="media-card"><div class="poster green">熊家餐馆</div><h3>熊家餐馆</h3><p>2022 · 剧集 · 8.4</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article><article class="media-card"><div class="poster purple">三体</div><h3>三体</h3><p>2024 · 剧集 · 7.5</p><button class="button small" data-toast="已加入订阅">快速订阅</button></article></div></section>
@@ -126,8 +133,9 @@
     <section class="page hidden" data-view="logs"><header class="page-header"><div><p class="eyebrow">RUN LOGS</p><h1>运行日志</h1><p class="description">先给出近期证据，完整日志进入独立页面。</p></div></header><section class="surface logs"><div><small>12:30:04</small><b>INFO</b><span>媒体库刷新完成，新增 18 项</span></div><div><small>12:29:51</small><b>WARN</b><span>一个外部连接响应较慢，已保留上次结果</span></div><div><small>12:28:12</small><b>INFO</b><span>下载任务进入等待队列</span></div></section></section>
   </main>
 
-  <button class="assistant" id="assistant" aria-label="打开点点 AI 助手"><span>✦</span><b>3</b></button>
-  <aside class="assistant-panel hidden" id="assistantPanel"><section class="surface"><div class="surface-head"><h2>关注助手</h2><button class="icon-button" id="assistantClose">×</button></div><p>有 3 个事项值得你看一眼。</p><ul><li><i class="warn"></i> 一个账号将在 7 天后过期</li><li><i class="danger-dot"></i> 一个任务需要重试</li><li><i class="ok"></i> 媒体库已完成同步</li></ul></section></aside>
+  <button class="standalone-launcher" data-toast="独立页面入口仅为演示"><svg><use href="#i-layout"/></svg>独立页面</button>
+  <button class="assistant" id="assistant" aria-label="打开点点 AI 助手"><span>✦</span><b>7</b></button>
+  <aside class="assistant-panel hidden" id="assistantPanel" data-design-role="attention-assistant"><section class="surface"><div class="surface-head"><h2>关注助手</h2><button class="icon-button" id="assistantClose">×</button></div><p>有 3 个事项值得你看一眼。</p><ul><li><i class="warn"></i> 一个账号将在 7 天后过期</li><li><i class="danger-dot"></i> 一个任务需要重试</li><li><i class="ok"></i> 媒体库已完成同步</li></ul></section></aside>
   <div class="demo-notice">当前为演示模式，仅展示界面及功能，数据为虚拟数据</div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <dialog id="searchDialog"><form method="dialog"><div class="surface-head"><h2>全局搜索</h2><button class="icon-button">×</button></div><input autofocus placeholder="搜索媒体、任务、设置…"><p>搜索入口用于快速定位下一步动作。</p></form></dialog>

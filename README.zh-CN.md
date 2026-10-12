@@ -6,7 +6,23 @@
 
 ## 一句话理解
 
-> 这是一个浅色优先、面向媒体自动化运维的控制台语言：暖中性背景、安静的蓝色交互强调、高信息密度但不嘈杂，用清晰的状态和分组让长任务变得可理解。
+> 这是一个浅色优先、面向媒体自动化运维的控制台语言：低饱和冷中性背景、安静的蓝色交互强调、高信息密度但不嘈杂，用清晰的状态和分组让长任务变得可理解。
+
+## 文档和 Demo 各自负责什么
+
+这个项目不是“文档讲一遍、Demo 再做一遍”，而是一条完整的设计证据链：
+
+| 层 | 文件 | 作用 |
+|---|---|---|
+| 观察事实 | `reference/REFERENCE-AUDIT.md` | 记录参考页面实际看到了什么；不把推测当成源码事实 |
+| 抽象原则 | `DESIGN-LANGUAGE.md`、`TOKENS.md`、`COMPONENTS.md`、`STATES.md`、`COMPOSITION.md`、`RESPONSIVE.md` | 说明哪些视觉、排版和交互规律可以迁移 |
+| 翻译层 | `docs/REFERENCE-TO-DEMO-MATRIX.zh-CN.md` | 把“观察”翻译成“原则、证据、迁移规则和禁止复制项” |
+| 可运行证据 | `demo/` | 用 Harbor Console 这个原创壳展示原则在真实页面中的密度、层级、状态和响应式表现 |
+| 代码索引 | `docs/DEMO-MAP.zh-CN.md` | 告诉人和 Codex 应该在 Demo 哪个区域观察什么 |
+| 验收标准 | `docs/UI-REVIEW-CHECKLIST.zh-CN.md` | 判断新产品是否真的使用了这套语言，而不是只换颜色和圆角 |
+| 执行协议 | `CODEX.md`、`docs/USING-WITH-CODEX.md`、`design-profile.yaml` | 让 Codex 能按同一流程读取、迁移和组合多个 UI 语言项目 |
+
+因此，**Demo 是视觉与交互证据，不是页面需求；文档是规则，不是装饰性说明**。只看其中一边，都会误读这个项目。
 
 ## 适合什么产品
 
@@ -24,19 +40,32 @@
 
 1. [AGENTS.md](AGENTS.md)
 2. [CODEX.md](CODEX.md)
-3. [DESIGN-LANGUAGE.md](DESIGN-LANGUAGE.md)
-4. [TOKENS.md](TOKENS.md)
-5. [COMPONENTS.md](COMPONENTS.md)
-6. [STATES.md](STATES.md)
-7. [COMPOSITION.md](COMPOSITION.md)
-8. [RESPONSIVE.md](RESPONSIVE.md)
-9. [reference/REFERENCE-AUDIT.md](reference/REFERENCE-AUDIT.md)
+3. [reference/REFERENCE-AUDIT.md](reference/REFERENCE-AUDIT.md) —— 先看观察事实
+4. [docs/REFERENCE-TO-DEMO-MATRIX.zh-CN.md](docs/REFERENCE-TO-DEMO-MATRIX.zh-CN.md) —— 再看观察如何被抽象
+5. [DESIGN-LANGUAGE.md](DESIGN-LANGUAGE.md)
+6. [TOKENS.md](TOKENS.md)
+7. [COMPONENTS.md](COMPONENTS.md)
+8. [STATES.md](STATES.md)
+9. [COMPOSITION.md](COMPOSITION.md)
+10. [RESPONSIVE.md](RESPONSIVE.md)
+11. [docs/DEMO-MAP.zh-CN.md](docs/DEMO-MAP.zh-CN.md) —— 再打开 Demo 校准视觉
+12. [docs/UI-REVIEW-CHECKLIST.zh-CN.md](docs/UI-REVIEW-CHECKLIST.zh-CN.md) —— 最后用它验收
+13. [docs/DESIGN-TRANSFER-BRIEF.zh-CN.md](docs/DESIGN-TRANSFER-BRIEF.zh-CN.md) —— 迁移到具体产品前填写
+
+给 Codex 时，优先使用 [docs/USING-WITH-CODEX.md](docs/USING-WITH-CODEX.md) 中的提示词，不要只说“参考这个 Demo 做得像一点”。
 
 ## 参考页面
 
 https://madbrolab.github.io/dian115/demo/#/overview
 
 本文档是对公开演示页面的黑盒分析，不复制源码。参考项目的版权、商标、品牌和原始素材归原作者所有。
+
+## 许可
+
+- 原创 Demo 代码和检查脚本：Apache-2.0，见 [LICENSE](LICENSE)。
+- 文档与设计分析：CC BY 4.0，见 [LICENSE-DOCS](LICENSE-DOCS)。
+- 参考项目名称、商标、原始素材及其他第三方材料不因本仓库而获得再许可。
+
 ## 架构决定
 
 - **格式：** Markdown + YAML + 无依赖 HTML/CSS/JS 演示，方便 Codex 阅读，也方便别人直接运行。
@@ -51,3 +80,17 @@ https://madbrolab.github.io/dian115/demo/#/overview
 - 不制作参考项目的像素级复刻。
 - 不复制参考站点的截图资源。
 - 不克隆全部参考路由；文档只说明如何判断目标产品真正需要哪些模块。
+
+## 和其他 UI 语言项目一起使用
+
+组合多个项目时，先写清楚职责，不要把它们的颜色、圆角、阴影和布局平均混合：
+
+```text
+主设计语言：Dian115 UI Language —— shell、运维密度、状态语义
+次级维度：Reference B —— 媒体卡片
+次级维度：Reference C —— 图表表达
+保留原创：目标产品的品牌、信息架构、业务实体和页面职责
+冲突时：产品任务 > 平台可用性 > 主语言 > 次级维度 > 装饰
+```
+
+每次迁移都应能回答：**借用了哪条原则、Demo 的哪项证据支持它、目标产品做了什么原创改写、哪些内容明确没有复制。**

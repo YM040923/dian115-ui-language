@@ -3,7 +3,11 @@ $root = Split-Path $PSScriptRoot -Parent
 $required = @(
   'AGENTS.md','CODEX.md','DESIGN-LANGUAGE.md','TOKENS.md','COMPONENTS.md',
   'STATES.md','COMPOSITION.md','RESPONSIVE.md','ACCESSIBILITY.md',
-  'reference/REFERENCE-AUDIT.md','demo/index.html','demo/style.css','demo/app.js'
+  'reference/REFERENCE-AUDIT.md',
+  'docs/REFERENCE-TO-DEMO-MATRIX.zh-CN.md','docs/DEMO-MAP.zh-CN.md',
+  'docs/UI-REVIEW-CHECKLIST.zh-CN.md','docs/USING-WITH-CODEX.md',
+  'docs/DESIGN-TRANSFER-BRIEF.zh-CN.md',
+  'demo/index.html','demo/style.css','demo/app.js'
 )
 foreach ($file in $required) {
   $path = Join-Path $root $file

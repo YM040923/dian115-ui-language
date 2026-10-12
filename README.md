@@ -13,7 +13,23 @@ This repository describes the **visual language, information hierarchy, interact
 
 ## Design read
 
-> A light-first media-operations control plane: warm neutral canvas, quiet blue interaction accent, high information density without visual noise, and status-aware feature islands that make long-running work legible.
+> A light-first media-operations control plane: a low-saturation cool-neutral canvas, quiet blue interaction accents, high information density without visual noise, and status-aware feature islands that make long-running work legible.
+
+## How the documents and demo work together
+
+This repository is an evidence chain, not a document plus a page mockup:
+
+| Layer | Files | Purpose |
+|---|---|---|
+| Observation | `reference/REFERENCE-AUDIT.md` | Records what was visibly observed without pretending to know private implementation |
+| Principles | `DESIGN-LANGUAGE.md`, `TOKENS.md`, `COMPONENTS.md`, `STATES.md`, `COMPOSITION.md`, `RESPONSIVE.md` | Turns observations into reusable visual, layout, and interaction rules |
+| Translation | `docs/REFERENCE-TO-DEMO-MATRIX.zh-CN.md` | Maps observation → principle → demo evidence → migration rule → do-not-copy boundary |
+| Executable evidence | `demo/` | Shows density, hierarchy, states, and responsive behavior in the original Harbor Console shell |
+| Code index | `docs/DEMO-MAP.zh-CN.md` | Tells humans and Codex where to inspect each principle in the demo |
+| Acceptance | `docs/UI-REVIEW-CHECKLIST.zh-CN.md` | Checks whether a target UI uses the language rather than only changing color and radius |
+| Execution protocol | `CODEX.md`, `docs/USING-WITH-CODEX.md`, `design-profile.yaml` | Makes the reference usable by Codex and composable with other UI-language repositories |
+
+The **demo is evidence, not a product specification**. The **documents are rules, not decoration**. Reading only one side produces the wrong result.
 
 ## Read in this order
 
@@ -21,13 +37,17 @@ For Codex:
 
 1. [AGENTS.md](AGENTS.md)
 2. [CODEX.md](CODEX.md)
-3. [DESIGN-LANGUAGE.md](DESIGN-LANGUAGE.md)
-4. [TOKENS.md](TOKENS.md)
-5. [COMPONENTS.md](COMPONENTS.md)
-6. [STATES.md](STATES.md)
-7. [COMPOSITION.md](COMPOSITION.md)
-8. [RESPONSIVE.md](RESPONSIVE.md)
-9. [reference/REFERENCE-AUDIT.md](reference/REFERENCE-AUDIT.md)
+3. [reference/REFERENCE-AUDIT.md](reference/REFERENCE-AUDIT.md)
+4. [docs/REFERENCE-TO-DEMO-MATRIX.zh-CN.md](docs/REFERENCE-TO-DEMO-MATRIX.zh-CN.md)
+5. [DESIGN-LANGUAGE.md](DESIGN-LANGUAGE.md)
+6. [TOKENS.md](TOKENS.md)
+7. [COMPONENTS.md](COMPONENTS.md)
+8. [STATES.md](STATES.md)
+9. [COMPOSITION.md](COMPOSITION.md)
+10. [RESPONSIVE.md](RESPONSIVE.md)
+11. [docs/DEMO-MAP.zh-CN.md](docs/DEMO-MAP.zh-CN.md)
+12. [docs/UI-REVIEW-CHECKLIST.zh-CN.md](docs/UI-REVIEW-CHECKLIST.zh-CN.md)
+13. [docs/DESIGN-TRANSFER-BRIEF.zh-CN.md](docs/DESIGN-TRANSFER-BRIEF.zh-CN.md)
 
 For humans:
 
@@ -47,9 +67,10 @@ All observations in this repository are black-box observations of the public dem
 
 ## License
 
-- Original analysis and documentation in this repository: CC BY 4.0. See [LICENSE-DOCS](LICENSE-DOCS).
-- Demo assets or code added later must carry their own explicit license.
-- Third-party names, logos, artwork, trademarks, and the reference project remain owned by their respective owners.
+- Original demo code and scripts: Apache-2.0. See [LICENSE](LICENSE).
+- Documentation and design analysis: CC BY 4.0. See [LICENSE-DOCS](LICENSE-DOCS).
+- The reference project's names, marks, artwork, and other third-party material are not relicensed here.
+
 ## Architecture decisions
 
 - **Format:** plain Markdown + YAML + a dependency-free HTML/CSS/JS demo. This keeps the reference easy for Codex to read and easy for a learner to run.
@@ -64,3 +85,17 @@ All observations in this repository are black-box observations of the public dem
 - No pixel-perfect replica of the reference application.
 - No screenshot pack copied from the source site.
 - No full clone of every reference route; the documents explain how to decide which modules a target product actually needs.
+
+## Combining several UI-language repositories
+
+Declare responsibilities before coding instead of averaging palettes, radii, shadows, and layouts:
+
+```text
+primary language: Dian115 UI Language — shell, operations density, state semantics
+secondary dimension: Reference B — media-card treatment
+secondary dimension: Reference C — chart treatment
+original: the target product's brand, information architecture, domain entities, and page responsibilities
+conflict priority: product job > platform usability > primary language > secondary dimensions > decoration
+```
+
+Every adaptation should answer: **which principle was borrowed, which demo evidence supports it, what was rewritten for the target product, and what was deliberately not copied.**

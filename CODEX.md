@@ -6,13 +6,27 @@ Use this repository when the user gives you a UI-language reference before askin
 
 Read the target as:
 
-> A light-first media-operations control plane with warm neutral depth, compact but breathable feature islands, status-aware data, and mobile-first simplification.
+> A light-first media-operations control plane with low-saturation cool-neutral depth, compact but breathable feature islands, status-aware data, and mobile-first simplification.
 
 Recommended dials for a similar product:
 
 - `DESIGN_VARIANCE`: 4–6. The system is composed and calm, not experimental.
 - `MOTION_INTENSITY`: 3–5. Motion explains refresh, loading, progress, opening, and live state; it does not decorate every card.
 - `VISUAL_DENSITY`: 6–8 on desktop operations pages, 3–5 on mobile.
+
+## Evidence chain
+
+Do not treat the Demo as a page specification. Read the repository in this order:
+
+1. `reference/REFERENCE-AUDIT.md` — visible observations and confidence limits.
+2. `docs/REFERENCE-TO-DEMO-MATRIX.zh-CN.md` — observation translated into a reusable rule.
+3. `DESIGN-LANGUAGE.md` through `RESPONSIVE.md` — the actual design contract.
+4. `docs/DEMO-MAP.zh-CN.md` — where the contract is visible in the runnable Demo.
+5. `docs/UI-REVIEW-CHECKLIST.zh-CN.md` — acceptance criteria for the target project.
+
+For every borrowed dimension, record the source rule and the target project's
+original adaptation. If a module exists only because it appeared in the Demo,
+remove it unless the target product has the same user decision.
 
 ## Before editing a target project
 

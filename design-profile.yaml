@@ -1,6 +1,6 @@
 # Design Profile
 name: Dian115 UI Language
-version: 1.0.0
+version: 1.1.0
 source:
   type: black-box-public-demo
   url: https://madbrolab.github.io/dian115/demo/#/overview
@@ -50,3 +50,25 @@ non_goals:
   - copy-business-data
   - copy-brand-assets
   - use-dashboard-for-every-screen
+evidence_contract:
+  observation: reference/REFERENCE-AUDIT.md
+  translation: docs/REFERENCE-TO-DEMO-MATRIX.zh-CN.md
+  principles:
+    - DESIGN-LANGUAGE.md
+    - TOKENS.md
+    - COMPONENTS.md
+    - STATES.md
+    - COMPOSITION.md
+    - RESPONSIVE.md
+  executable_evidence: demo/
+  evidence_index: docs/DEMO-MAP.zh-CN.md
+  acceptance: docs/UI-REVIEW-CHECKLIST.zh-CN.md
+composition_contract:
+  primary_language: this profile owns the shell, operations density, and state semantics
+  secondary_references: named dimensions only
+  conflict_priority:
+    - product-job
+    - platform-usability
+    - primary-language
+    - secondary-dimensions
+    - decoration

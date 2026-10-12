@@ -10,4 +10,4 @@ The DIAN115 project, name, logo, source code, routes, data, screenshots, artwork
 
 ## Original material in this repository
 
-The written rules, token set, audit, Codex protocol, and Harbor Console demo are original material licensed as described in [LICENSE](LICENSE) and [LICENSE-DOCS](LICENSE-DOCS).
+The documentation and design analysis are licensed under [LICENSE-DOCS](LICENSE-DOCS). The independently authored Harbor Console demo and check scripts are licensed under [LICENSE](LICENSE). Third-party reference names and marks are only used where needed to identify the source of the analysis and are not relicensed here.

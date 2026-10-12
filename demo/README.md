@@ -20,3 +20,14 @@ The demo includes:
 - running, queued, completed, failed, and retryable task states.
 
 It is a teaching artifact, not a production dashboard or backend.
+
+Read it together with:
+
+- `../reference/REFERENCE-AUDIT.md` for observed facts;
+- `../docs/REFERENCE-TO-DEMO-MATRIX.zh-CN.md` for the observation-to-principle translation;
+- `../docs/DEMO-MAP.zh-CN.md` for the visual evidence index;
+- `../docs/UI-REVIEW-CHECKLIST.zh-CN.md` for target-product acceptance.
+
+Do not copy the Demo's routes or module list into a new product. Replace them
+with the target product's own decisions while preserving only the named design
+principles.

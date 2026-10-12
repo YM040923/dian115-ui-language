@@ -1,5 +1,7 @@
 # Dian115 UI Language
 
+[简体中文](README.zh-CN.md) | English
+
 Dian115 UI Language is a reusable design-reference repository distilled from a black-box study of the public DIAN115 demo page. It is written for Codex and for people who want to learn how to build calm, dense, state-aware media-automation software interfaces.
 
 This repository describes the **visual language, information hierarchy, interaction patterns, state semantics, and composition rules** of the reference. It does not publish DIAN115 application source code, private data, production credentials, or a clone of its business logic.

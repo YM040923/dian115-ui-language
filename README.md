@@ -6,6 +6,8 @@ Dian115 UI Language is a reusable design-reference repository distilled from a b
 
 This repository describes the **visual language, information hierarchy, interaction patterns, state semantics, and composition rules** of the reference. It does not publish DIAN115 application source code, private data, production credentials, or a clone of its business logic.
 
+**Live demo:** [Open Harbor Console](https://ym040923.github.io/dian115-ui-language/)
+
 ## What this repository is for
 
 - Give Codex a durable UI reference before designing another application.

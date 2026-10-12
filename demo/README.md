@@ -10,6 +10,8 @@ python -m http.server 8080 -d demo
 
 Open `http://localhost:8080`.
 
+Or try the [hosted demo](https://ym040923.github.io/dian115-ui-language/).
+
 The demo includes:
 
 - grouped navigation and a compact responsive shell;
